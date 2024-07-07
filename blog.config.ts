@@ -1,4 +1,5 @@
 // Purpose: This file is used to configure the blog, including the author, title, description, and other settings.
+import { link } from "fs";
 import Intro from "./app/intro.mdx";
 
 const siteData: any = {
@@ -8,7 +9,7 @@ const siteData: any = {
     "Um blog minimalista para artigos e meu desenvolvimento pessoal como desenvolvedor", // website description
   theme: "light", // light | dark
   language: "pt-BR", // zh-CN | en
-  githubRepo: "https://github.com/arthcc/arth.dev", // your blog's github repo
+  githubRepo: "https://github.com/kleysongomes/portifolio", // your blog's github repo
 
   // how to change the favicon of the website?
   // change the app/favicon.ico file directly，or refer to the document below
@@ -21,10 +22,6 @@ const siteData: any = {
 
     // navigation bar
     routes: [
-      {
-        name: "Artigos",
-        value: "/blog",
-      },
       {
         name: "Projetos",
         value: "/projects",
@@ -39,7 +36,7 @@ const siteData: any = {
   },
 
   home: {
-    title: "Bem vindo ao meu portifólio!",
+    title: "Iae, vamos lá?", // homepage title
 
     // introduction or about me
     intro: Intro, // file path of the introduction
@@ -53,15 +50,10 @@ const siteData: any = {
     },
   },
 
-  blog: {
-    title: "Portifólio",
-    description: "Toda a minha vida tech, documentada",
-  },
-
   project: {
     title: "O que eu tenho feito e contribuido:",
     description:
-      "Um resumo de todos os projetos e de participacoes ativas na comunidade Tech ao longo dos anos",
+      "Um resumo de todos os projetos que tenho participado, seja como analista ou desenvolvedor.",
 
     // name, description, link are required
     // github: the address of the project's github repo
@@ -70,35 +62,54 @@ const siteData: any = {
     // you can add more fields according to your needs ,but you need to modify the code in the projects/page.tsx file
     projects: [
         {
-            name: "Tech Ears",
+            name: "Desbravalink",
             description:
-              "Projeto OpenSource que criei com o objetivo de ajudar desenvolvedores a melhorarem seu inglês técnico por meio de um jogo estilo Wordle",
-            link: "https://techears.vercel.app",
-            github: "https://github.com/arthcc/tech-ears",
-            status: "active",
+              "Site principal de startup em que sou fundador, onde ajudamos pessoas a ganharem experiência profissional através de projetos reais.",
+            link: "https://desbravalink.com.br/",
+            status: "pub",
           },
           {
-            name: "TrilhaInfo",
+            name: "Beeework",
             description:
-              "Projeto OpenSource que participo com o objetivo de agregar e organizar conteúdos gratuitos em português para pessoas que querem ingressar na área de Tecnologia.",
-            link: "https://trilha.info/",
-            github: "https://github.com/flaviojmendes/trilhainfo",
-            status: "active",
+              "Sistemas de recrutamento e seleção para empresas, onde temos uma abordagem mais humanizada e focada em diversidade.",
+            link: "https://beeework-frontend-desbravalinks-projects.vercel.app/",
+            status: "pub",
           },
       {
-        name: "DentalDash",
+        name: "Mobile",
         description:
-          "UM ERP completo para a industria de odontologia, utlizando NestJs para a API  e front em NextJs",
-        link: "",
-        github: "https://github.com/DentalDash/dental-dash",
-        status: "dev",
+          "Nossa página na Google Play Store, onde você pode encontrar uma relação com todos os aplicativos que atuei e estão publicados.",
+        link: "https://play.google.com/store/apps/dev?id=5387164277767526968",
+        github: "",
+        status: "pub",
       },
       {
-        name: "WooviChallenge",
-        description: "Resolucao dos desafios propostos pela fintech Woovi",
-        link: "https://woovi.com",
-        github: "",
-        status: "dev",
+        name: "Pomodoro",
+        description: "Um timer de pomodoro simples, feito em HTML, CSS e JS.",
+        link: "https://pomodoro.desbravalink.com.br/",
+        github: "hhttps://github.com/kleysongomes/PomodoroTimer",
+        status: "pub",
+      },
+      {
+        name: "TOTVS - Protheus",
+        description: "Exemplos de rotinas e customizações em Protheus, ERP da TOTVS.",
+        link: "https://github.com/kleysongomes/Advpl",
+        github: "https://github.com/kleysongomes/Advpl",
+        status: "git",
+      },
+      {
+        name: "Inventário RP",
+        description: "Um sistema de inventário simples, como MOD para o game Grand Theft Auto V (GTA 5).",
+        link: "https://github.com/kleysongomes/inventarioRP",
+        github: "https://github.com/kleysongomes/inventarioRP",
+        status: "git",
+      },
+      {
+        name: "JumpRUM",
+        description: "Game desenvolvido em HTML, CSS e JS, onde o objetivo é pular e desviar de obstáculos.",
+        link: "https://game-jump-run.vercel.app/",
+        github: "https://github.com/kleysongomes/gameJumpRun",
+        status: "pub",
       },
     
      
@@ -106,30 +117,20 @@ const siteData: any = {
     // status color and text
     getStatus: (status: string) => {
       switch (status) {
-        case "active":
+        case "pub":
           return {
             variant: "default",
-            text: "ACTIVE",
+            text: "PUBLICADO",
           };
-        case "inactive":
+        case "git":
           return {
-            variant: "secondary",
-            text: "INACTIVE",
-          };
-        case "bug":
-          return {
-            variant: "destructive",
-            text: "BUG",
-          };
-        case "dev":
-          return {
-            variant: "outline",
-            text: "DEV",
+            variant: "default",
+            text: "GIT",
           };
         default:
           return {
             variant: "default",
-            text: "ACTIVE",
+            text: "DEV",
           };
       }
     },
