@@ -114,7 +114,7 @@ const siteData: any = {
         status: "git",
       },
       {
-        name: "JumpRUM",
+        name: "JumpRUN",
         description: "Game desenvolvido em HTML, CSS e JS, onde o objetivo é pular e desviar de obstáculos.",
         link: "https://game-jump-run.vercel.app/",
         github: "https://github.com/kleysongomes/gameJumpRun",
