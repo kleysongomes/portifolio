@@ -22,6 +22,10 @@ const siteData: any = {
 
     // navigation bar
     routes: [
+      // {
+      //   name: "Artigos",
+      //   value: "/blog",
+      // },
       {
         name: "Projetos",
         value: "/projects",
@@ -48,6 +52,11 @@ const siteData: any = {
       instagram: "https://www.instagram.com/_kleyson/",
       youtube: "",
     },
+  },
+
+  blog: {
+    title: "Portifólio",
+    description: "Toda a minha vida tech, documentada",
   },
 
   project: {
