@@ -28,6 +28,8 @@ Este é o portfólio pessoal de Kleyson Gomes, Analista e Desenvolvedor Full Sta
 ## Estrutura do Projeto
 
 ├── index.html # Página principal
+
 ├── style.css # Estilos CSS do site
+
 └── script.js # Lógica JavaScript para animações e integração com GitHub API
 
